@@ -23,9 +23,9 @@ const FormCreateBook = ({
 	isLoading
 }: {
 	handleSubmit: (
-		callback: SubmitHandler<Inputs>
+		callback: SubmitHandler<any>
 	) => (e?: React.BaseSyntheticEvent) => Promise<void>
-	onSubmit: SubmitHandler<Inputs>
+	onSubmit: SubmitHandler<any>
 	isLoading: boolean
 	register: any
 	errors: any
