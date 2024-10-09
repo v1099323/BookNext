@@ -2,26 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-nunito);
+	font-weight: 400;
+	min-height: 100svh;
+	display: flex;
+	flex-direction: column;
+	scroll-behavior: smooth;
+}
+main {
+	flex: 1;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.description {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.button {
+	@apply inline-block text-center bg-violet-600 text-white transition-colors font-bold py-2 px-4 rounded hover:bg-violet-700;
+}
+
+.loader {
+	position: relative;
+	pointer-events: none;
+}
+
+.loader::before {
+	content: 'Удаление...';
+	position: absolute;
+	inset: 0;
+	background-color: rgba(255, 255, 255, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
